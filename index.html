@@ -164,7 +164,7 @@
 
         .dark-mode-toggle {
             position: absolute;
-            top: 60px;
+            top: 16px;
             right: 20px;
             width: 44px;
             height: 44px;
@@ -178,12 +178,11 @@
             font-size: 20px;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
+            z-index: 100;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .dark-mode-toggle {
-                border-color: rgba(255, 255, 255, 0.2);
-            }
+        [data-theme="dark"] .dark-mode-toggle {
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .dark-mode-toggle:active {
@@ -438,8 +437,8 @@
 
         .set-row {
             display: grid;
-            grid-template-columns: 40px 1fr 1fr 36px;
-            gap: 8px;
+            grid-template-columns: 50px 1fr 1fr 36px;
+            gap: 10px;
             align-items: center;
         }
 
@@ -450,40 +449,40 @@
         }
 
         .set-input {
-            padding: 10px 12px;
+            padding: 14px 16px;
             border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            font-size: 17px;
+            border-radius: 12px;
+            font-size: 18px;
             text-align: center;
             transition: all 0.2s ease;
             background: var(--color-bg);
             color: var(--color-text-primary);
-            font-weight: 400;
+            font-weight: 500;
+            min-height: 48px;
         }
 
-        @media (prefers-color-scheme: dark) {
-            .set-input {
-                border-color: rgba(255, 255, 255, 0.2);
-            }
+        [data-theme="dark"] .set-input {
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .set-input:focus {
             outline: none;
             border-color: var(--color-accent-purple);
-            box-shadow: 0 0 0 3px rgba(175, 82, 222, 0.1);
+            box-shadow: 0 0 0 4px rgba(175, 82, 222, 0.15);
         }
 
         .set-input::placeholder {
             color: var(--color-text-secondary);
-            opacity: 0.5;
+            opacity: 0.6;
+            font-size: 15px;
         }
 
         .delete-set {
             background: var(--color-accent-push);
             color: white;
             border: none;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 18px;
@@ -491,6 +490,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
         .delete-set:active {
